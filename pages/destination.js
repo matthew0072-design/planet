@@ -1,7 +1,7 @@
-import Link from 'next/link'
+
 import Header from '../pages/header'
 import Image from 'next/image'
-import {useState} from 'react'
+import {useReducer} from 'react'
 import MOON from '../public/assets/destination/image-moon.png'
 import EUROPA from '../public/assets/destination/image-europa.png'
 import MARS from '../public/assets/destination/image-mars.png'
@@ -11,40 +11,60 @@ export default function Destination () {
 
     
 
-    const [moon, setMoon] = useState('moon')
-    const [mars, setMars] = useState(false)
-    const [europa, setEuropa] = useState(false)
-    const [titan, setTitan] = useState(false)
+    function destinationHandler(state, action) {
+        if(action.type === 'moon') {
+            return {
+                ...state,
+                moon: true,
+                mars:false,
+                europa:false,
+                titan:false
+            }
+        }
 
-   
+        else if(action.type === 'mars') {
+            return {
+                ...state,
+                moon: false,
+                mars:true,
+                europa:false,
+                titan:false
+            }
+        }
+        else if(action.type === 'europa') {
+            return {
+                ...state,
+                moon: false,
+                mars:false,
+                europa:true,
+                titan:false
+            }
+        }
 
-    const onPlanetHandler = () => {
-        setMoon(true)
-        setMars(false)
-        setEuropa(false)
-        setTitan(false)
+        else {
+            return {
+                ...state,
+                moon: false,
+                mars:false,
+                europa:false,
+                titan:true
+    
+            }
+        }
+
     }
 
-    const onMarsHandler =() => {
-        setMars(true)
-        setMoon(false)
-        setEuropa(false)
-        setTitan(false)
+    const initialState = {
+        moon: true,
+        mars: false,
+        europa: false,
+        titan: false
     }
 
-    const onEuropaHandler = () => {
-        setEuropa(true)
-        setMoon(false)
-        setMars(false)
-        setTitan(false)
-    }
 
-    const onTitanHandler = () => {
-        setTitan(true)
-        setEuropa(false)
-        setMoon(false)
-        setMars(false)
-    }
+const [state, dispatch] = useReducer(destinationHandler, initialState)
+
+
 
     return(
         <div className="bg-[url('/assets/destination/background-destination-mobile.jpg')] text-white w-full min-h-screen bg-cover bg-no-repeat relative box-border
@@ -59,7 +79,7 @@ export default function Destination () {
         
         <main className="mt-10 lg:h-screen lg:flex lg:justify-around  lg:box-border lg:mx-[10%] ">
             <section className="w-[13.8125rem] mx-auto md:mx-0   
-            lg:flex lg:flex-col  lg:w-[50%] l">
+            lg:flex lg:flex-col  lg:w-[50%] ">
                 <h3 className=" h-[1.1875rem] font-[Barlow-Condensed] font-normal text-base leading-5 tracking-[2.7px] text-[#FFFFFF] 
                  md:ml-9 md:h-6 md:w-[17rem] md:mx-0  md:text-xl md:leading-7 md:tracking-[3.375px] lg:text-3xl lg:leading-9 lg:tracking-[4.725px] lg:w-auto  "> <span className="font-bold opacity-25 
                 
@@ -69,13 +89,13 @@ export default function Destination () {
                 lg:self-center lg:mt-[10rem] lg:flex-none lg:w-[50%] '>
                     {
                         (() => {
-                            if(moon){
+                            if(state.moon){
                                 return (<Image src={MOON} width={300} height={400}  alt="planet"/>)
                             }
-                            else if (mars) {
+                            else if (state.mars) {
                                return  <Image src={MARS} width={350} height={400}  alt="planet"/>
                             }
-                            else if (europa){
+                            else if (state.europa){
                                return  <Image src={EUROPA} width={350} height={400}  alt="planet"/>
                             }else {
                                return <Image src={TITAN} width={350} height={400}  alt="planet"/>
@@ -91,20 +111,20 @@ export default function Destination () {
                 <ul className="text-white mt-7 flex mx-auto w-[14.84375rem] h-7 justify-between font-[Barlow-Condensed] leading-4 tracking-[2.3625px]  
                 md:w-[17.84375rem] md:h-9 md:text-base md:leading-5 md:tracking-[2.7px] md:text-[#D0D6F9] 
                 ">
-                    <li className={`hover:cursor-pointer  ${moon ? "border-b-2" : ""}`} onClick={onPlanetHandler}>MOON</li>
-                    <li className={`hover:cursor-pointer text-[#D0D6F9] ${mars ? "border-b-2" : ""}`} onClick={onMarsHandler}>MARS</li>
-                    <li className={`hover:cursor-pointer text-[#D0D6F9] ${europa ? "border-b-2" : ""}`} onClick={onEuropaHandler}>EUROPA</li>
-                    <li className={`hover:cursor-pointer text-[#D0D6F9] ${titan ? "border-b-2" : ""}`} onClick={onTitanHandler}>TITAN</li>
+                    <li className={`hover:cursor-pointer  ${state.moon ? "border-b-2" : ""}`} onClick={() => dispatch({type: 'moon'})}>MOON</li>
+                    <li className={`hover:cursor-pointer text-[#D0D6F9] ${state.mars ? "border-b-2" : ""}`} onClick={() => dispatch({type: 'mars'})}>MARS</li>
+                    <li className={`hover:cursor-pointer text-[#D0D6F9] ${state.europa ? "border-b-2" : ""}`} onClick={() => dispatch({type: 'europa'})}>EUROPA</li>
+                    <li className={`hover:cursor-pointer text-[#D0D6F9] ${state.titan ? "border-b-2" : ""}`} onClick={() => dispatch({type: 'titan'})}>TITAN</li>
                 </ul>
             </nav>
 
-            {moon && <section>
+            {state.moon && <section>
 
             <div className="">
                 <p className="font-[Bellefair] text-[3.5rem] leading-[4rem] text-[#FFFFFF] text-center pt-6   md:text-[5rem] md:leading-[5.75rem] lg:text-[6.25rem] lg:leading-[7.1875rem]  ">MOON</p>
             </div>
             <article className="w-[20.4375rem] h-[7.8125rem] mx-auto md:w-[35.8125rem] md:h-[5.25rem] lg:w-[27.75rem] lg:h-[8rem]">
-                <p className="font-[Barlow] text-sm leading-6 text-center text-[#D0D6F9] pb-6 lg:pb-8 border-b border-[#383B4B] md:text-base md:leading-7 lg:text-xl lg:leading-8 ">See our planet as you've never seen it before. A perfect relaxing trip 
+                <p className="font-[Barlow] text-sm leading-6 text-center text-[#D0D6F9] pb-6 lg:pb-8 border-b border-[#383B4B] md:text-base md:leading-7 lg:text-xl lg:leading-8 ">See our planet as you `&apos` ve never seen it before. A perfect relaxing trip 
                     away to help regain perspective and come back refreshed. while you're there
                     . take in some history by visiting the Luna 2 and Apollo 11 landing site</p>
             </article>
@@ -126,7 +146,7 @@ export default function Destination () {
             </section>
             </section>}
             
-            { mars && <section>
+            { state.mars && <section>
             <div className=" ">
                 <p className="font-[Bellefair] text-[3.5rem] leading-[4rem] text-[#FFFFFF] text-center pt-6
                   md:text-[5rem] md:leading-[5.75rem] lg:text-[6.25rem] lg:leading-[7.1875rem] ">MARS</p>
@@ -150,7 +170,7 @@ export default function Destination () {
                 </div>    
             </section>
             </section>}
-            { europa && <section>
+            { state.europa && <section>
             <div className="">
                 <p className=" font-[Bellefair] text-[3.5rem] leading-[4rem] text-[#FFFFFF] text-center pt-6  md:text-[5rem] md:leading-[5.75rem] lg:text-[6.25rem] lg:leading-[7.1875rem] ">EUROPA</p>
             </div>
@@ -173,7 +193,7 @@ export default function Destination () {
             </section>
             </section>}
 
-            {titan && <section>
+            {state.titan && <section>
             <div className="">
                 <p className=" font-[Bellefair] text-[3.5rem] leading-[4rem] text-[#FFFFFF] text-center pt-6  md:text-[5rem] md:leading-[5.75rem] lg:text-[6.25rem] lg:leading-[7.1875rem] ">TITAN</p>
             </div>

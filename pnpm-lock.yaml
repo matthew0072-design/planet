@@ -1,14 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
-  autoprefixer: ^10.4.2
+  autoprefixer: ^10.4.13
   eslint: 8.8.0
   eslint-config-next: 12.0.10
   next: 12.0.10
-  postcss: ^8.4.5
+  postcss: ^8.4.18
   react: 17.0.2
   react-dom: 17.0.2
-  tailwindcss: ^3.0.18
+  tailwindcss: ^3.2.2
 
 dependencies:
   next: 12.0.10_sfoxds7t5ydpegc3knd667wn6m
@@ -383,7 +383,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001431
+      caniuse-lite: 1.0.30001434
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -428,7 +428,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001431
+      caniuse-lite: 1.0.30001434
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -451,8 +451,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite/1.0.30001431:
-    resolution: {integrity: sha512-zBUoFU0ZcxpvSt9IU66dXVT/3ctO1cy4y9cscs1szkPlcWb6pasYM144GqrUygUbT+k7cmUCW61cvskjcv0enQ==}
+  /caniuse-lite/1.0.30001434:
+    resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==}
 
   /chalk/4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1419,7 +1419,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 12.0.10
-      caniuse-lite: 1.0.30001431
+      caniuse-lite: 1.0.30001434
       postcss: 8.4.5
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2

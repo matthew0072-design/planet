@@ -1,6 +1,6 @@
 import Header from '../pages/header'
 import Image from 'next/image'
-import {useState} from 'react'
+import {useReducer} from 'react'
 import ANOUSHEH from '../public/assets/crew/image-anousheh-ansari.png'
 import DOUGLAS from '../public/assets/crew/image-douglas-hurley.png'
 import MARK from '../public/assets/crew/image-mark-Shuttleworth.png'
@@ -9,38 +9,63 @@ import VICTOR from '../public/assets/crew/image-victor-glover.png'
 
 export default function Crew () {
     
-    const [commander, setCommander] = useState(true)
-    const [mission, setMission] = useState(false)
-    const [pilot, setPilot] = useState(false)
-    const [flight, setFlight] = useState(false)
 
-    const onCommanderHandler = () => {
-        setCommander(true)
-        setMission(false)
-        setPilot(false)
-        setFlight(false)
+    function crewHandler(state, action) {
+        if(action.type === 'commander') {
+            return {
+                ...state,
+                commander: true,
+                mission:false,
+                pilot:false,
+                flight:false
+            }
+        }
+
+        else if(action.type === 'mission') {
+            return {
+                ...state,
+                commander: false,
+                mission:true,
+                pilot:false,
+                flight:false
+            }
+        }
+        else if(action.type === 'pilot') {
+            return {
+                ...state,
+                commander: false,
+                mission:false,
+                pilot:true,
+                flight:false
+            }
+        }
+
+        else {
+            return {
+                ...state,
+                commander: false,
+                mission:false,
+                pilot:false,
+                flight:true
+            }
+        }
+
     }
 
-    const onMissionHandler = () => {
-        setMission(true)
-        setCommander(false)
-        setPilot(false)
-        setFlight(false)
+    const initialState = {
+        commander: true,
+        mission: false,
+        pilot: false,
+        flight: false
     }
 
-    const onPilotHandler = () => {
-        setPilot(true)
-        setMission(false) 
-        setCommander(false)
-        setFlight(false)
-    }
 
-    const onFlightHandler = () => {
-        setFlight(true)
-        setMission(false)
-        setPilot(false)
-        setCommander(false)
-    }
+const [state, dispatch] = useReducer(crewHandler, initialState)
+
+
+
+
+
 
     return (
         <div className="bg-[url('/assets/crew/background-crew-mobile.jpg')] bg-cover w-full min-h-[60rem]  relative box-border text-[#FFFFFF]
@@ -66,13 +91,13 @@ export default function Crew () {
             lg:row-span-2  '>
                     {
                         (() => {
-                            if(commander){
+                            if(state.commander){
                                 return (<Image src={DOUGLAS} height={600} objectFit="contain" layout='responsive'  alt="planet"/>)
                             }
-                            else if (mission) {
+                            else if (state.mission) {
                                return  (<Image src={MARK}  height={600} objectFit="contain" layout='responsive'  alt="planet"/>)
                             }
-                            else if (pilot){
+                            else if (state.pilot){
                                return  (<Image src={VICTOR}  height={700} objectFit="contain" layout='responsive' alt="planet"/>)
                             }else {
                                return (<Image src={ANOUSHEH} height={700}  objectFit="contain" layout='responsive'  alt="planet"/>)
@@ -85,13 +110,13 @@ export default function Crew () {
             <section className=" mt-5 mx-auto w-[5.5rem] h-[0.625rem]  flex justify-between
                md:mt-12 
                lg:row-start-2 lg:row-end-3 lg:self-start lg:justify-self-start lg:mx-0  ">
-                    <div className={`${commander ? "opacity-100" :""} hover:cursor-pointer  h-[0.625rem] w-[0.625rem]  rounded-full bg-[#FFFFFF]  opacity-25 mix-blend-normal`} onClick={onCommanderHandler}></div>
-                    <div className={`${mission ? "opacity-100" :""} hover:cursor-pointer  h-[0.625rem] w-[0.625rem] rounded-full bg-[#FFFFFF] opacity-25 mix-blend-normal`} onClick={onMissionHandler}></div>
-                    <div className={`${pilot ? "opacity-100" :""} hover:cursor-pointer h-[0.625rem] w-[0.625rem] rounded-full bg-[#FFFFFF] opacity-25 mix-blend-normal`} onClick={onPilotHandler}></div>
-                    <div className={`${flight ? "opacity-100" :""} hover:cursor-pointer h-[0.625rem] w-[0.625rem] rounded-full bg-[#FFFFFF] opacity-25 mix-blend-normal`}onClick={onFlightHandler}></div>
+                    <div className={`${state.commander ? "opacity-100" :""} hover:cursor-pointer  h-[0.625rem] w-[0.625rem]  rounded-full bg-[#FFFFFF]  opacity-25 mix-blend-normal`} onClick={() => dispatch({type:'commander'})}></div>
+                    <div className={`${state.mission ? "opacity-100" :""} hover:cursor-pointer  h-[0.625rem] w-[0.625rem] rounded-full bg-[#FFFFFF] opacity-25 mix-blend-normal`} onClick={() => dispatch({type:'mission'})}></div>
+                    <div className={`${state.pilot ? "opacity-100" :""} hover:cursor-pointer h-[0.625rem] w-[0.625rem] rounded-full bg-[#FFFFFF] opacity-25 mix-blend-normal`} onClick={() => dispatch({type:'pilot'})}></div>
+                    <div className={`${state.flight ? "opacity-100" :""} hover:cursor-pointer h-[0.625rem] w-[0.625rem] rounded-full bg-[#FFFFFF] opacity-25 mix-blend-normal`} onClick={() => dispatch({type:'flight'})}></div>
                 </section>
                 <section className="md:order-first ">
-                    {commander && <section className="w-[20.4375rem] h-[10.625rem]  relative md:w-[28.625rem] md:h-[11.375rem] mx-auto lg:w-auto mt-4 text-[#FFFFFF] ">
+                    {state.commander && <section className="w-[20.4375rem] h-[10.625rem]  relative md:w-[28.625rem] md:h-[11.375rem] mx-auto lg:w-auto mt-4 text-[#FFFFFF] ">
                     
                     <h3 className=" font-[Bellefair] text-base leading-5 text-center opacity-50 mix-blend-normal 
                     md:text-2xl md:leading-7lg:text-[2rem] lg:leading-9 lg:text-start "> COMMANDER</h3>
@@ -106,7 +131,7 @@ export default function Crew () {
                 
                     </section>}
 
-                    {mission && <section className="relative w-[20.4375rem] h-[10.625rem] md:w-[28.625rem] md:h-[11.375rem] mx-auto lg:w-auto mt-4 text-[#FFFFFF]">  
+                    {state.mission && <section className="relative w-[20.4375rem] h-[10.625rem] md:w-[28.625rem] md:h-[11.375rem] mx-auto lg:w-auto mt-4 text-[#FFFFFF]">  
                     <p className="font-[Bellefair] text-base leading-5 text-center opacity-50 mix-blend-normal
                     
                     md:text-2xl md:leading-7 lg:text-[2rem] lg:leading-9 lg:text-start">MISSION SPECIALIST</p>
@@ -120,7 +145,7 @@ export default function Crew () {
                     </p>
                     </section>}
 
-                    {pilot && <section className="relative w-[20.4375rem] h-[10.625rem] md:w-[28.625rem] md:h-[11.375rem] lg:w-auto mx-auto mt-4 text-[#FFFFFF]">  
+                    {state.pilot && <section className="relative w-[20.4375rem] h-[10.625rem] md:w-[28.625rem] md:h-[11.375rem] lg:w-auto mx-auto mt-4 text-[#FFFFFF]">  
                         <p className="font-[Bellefair] text-base leading-5 text-center opacity-50 mix-blend-normal
                         md:text-2xl md:leading-7 lg:text-[2rem] lg:leading-9 lg:text-start">PILOT</p>
                         <p className="font-[Bellefair] text-2xl leading-7 text-center mt-4
@@ -132,7 +157,7 @@ export default function Crew () {
                         </p>
                     </section>}
                 
-                    { flight &&<section className="w-[20.4375rem] h-[10.625rem] md:w-[28.625rem] md:h-[11.375rem] mx-auto mt-4 lg:w-auto text-[#FFFFFF]  lg:mx-0 ">
+                    {state.flight &&<section className="w-[20.4375rem] h-[10.625rem] md:w-[28.625rem] md:h-[11.375rem] mx-auto mt-4 lg:w-auto text-[#FFFFFF]  lg:mx-0 ">
                         <p className="font-[Bellefair] text-base leading-5 text-center opacity-50 mix-blend-normal
                         md:text-2xl md:leading-7 lg:text-[2rem] lg:leading-9 lg:text-start">FLIGHT ENGINEER</p>
                         <p className="font-[Bellefair] text-2xl leading-7 text-center mt-4

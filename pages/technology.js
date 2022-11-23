@@ -1,6 +1,6 @@
 import Header from '../pages/header'
 import Image from 'next/image'
-import {useState} from 'react'
+import {useReducer} from 'react'
 import LAUNCH from '../public/assets/technology/image-launch-vehicle-landscape.jpg'
 import SPACE from '../public/assets/technology/image-space-capsule-landscape.jpg'
 import SPACEPORT from '../public/assets/technology/image-spaceport-landscape.jpg'
@@ -11,30 +11,55 @@ import SPACEPORT_PORTRAIT from '../public/assets/technology/image-spaceport-port
 
 export default function Technology () {
 
-        const [vehicleSpace, setVehicleSpace] = useState(true)
-        const [portSpace, setPortSpace] = useState(false)
-        const [capsuleSpace, setCapsuleSpace] = useState(false) 
 
-        const onVehicleHandler =() => {
-            setVehicleSpace(true)
-            setPortSpace(false)
-            setCapsuleSpace(false)
-            
+    function technologyHandler(state, action) {
+        if(action.type === 'vehicleSpace') {
+            return {
+                ...state,
+                vehicleSpace: true,
+                portSpace:false,
+                capsuleSpace:false,
+                
+            }
         }
 
-        const onSpaceHandler = () => {
-            setVehicleSpace(false)
-            setPortSpace(true)
-            setCapsuleSpace(false)
-            
+        else if(action.type === 'portSpace') {
+            return {
+                ...state,
+                vehicleSpace: false,
+                portSpace:true,
+                capsuleSpace:false,
+                
+            }
+        }
+        else {
+            return {
+                ...state,
+                vehicleSpace: false,
+                portSpace:false,
+                capsuleSpace:true,
+                
+            }
         }
 
-        const onCapsuleHandler = () => {
-            setVehicleSpace(false)
-            setPortSpace(false)
-            setCapsuleSpace(true)
-            
         }
+
+
+
+    const initialState = {
+        vehicleSpace: true,
+        portSpace: false,
+        capsuleSpace: false,
+        
+    }
+
+
+const [state, dispatch] = useReducer(technologyHandler, initialState)
+
+        
+
+
+
 
 
     return (
@@ -60,10 +85,10 @@ export default function Technology () {
             '>
                     {
                         (() => {
-                            if(vehicleSpace){
+                            if(state.vehicleSpace){
                                 return (<Image src={LAUNCH} objectFit="contain" height={300}  layout="responsive" alt="planet"/>)
                             }
-                            else if (portSpace) {
+                            else if (state.portSpace) {
                                return  <Image src={SPACE}  height={300}  objectFit="contain" layout='responsive'  alt="planet"/>
                             }
                             else {
@@ -77,14 +102,14 @@ export default function Technology () {
 
                 <figure className='hidden md:hidden
              
-            lg:order-last lg:aspect-square lg:h-[32.9375rem]  lg:self-end     
+            lg:order-last lg:aspect-square lg:h-[32.9375rem]  lg:self-end  lg:block   
             '>
                     {
                         (() => {
-                            if(vehicleSpace){
+                            if(state.vehicleSpace){
                                 return (<Image src={LAUNCH_PORTRAIT} objectFit="contain" height={300}  layout="responsive" alt="planet"/>)
                             }
-                            else if (portSpace) {
+                            else if (state.portSpace) {
                                return  <Image src={SPACE_PORTRAIT}  height={300}  objectFit="contain" layout='responsive'  alt="planet"/>
                             }
                             else {
@@ -99,12 +124,12 @@ export default function Technology () {
                 md:w-[13.125rem] md:h-[3.75rem] 
                 lg:order-first lg:flex-col lg:h-[18.9375rem] lg:justify-around
                 ">
-                <div className={`${vehicleSpace ? "bg-white text-black" :""} rounded-full w-10 h-10 border box-border font-[Bellefair]  pt-[0.5rem]  text-base leading-5 text-center  tracking-[1px] text-[#FFFFFF] lg:h-[5rem] lg:w-[5rem] lg:text-[2rem] lg:leading-9 lg:tracking-[2px] hover:cursor-pointer lg:pt-[1.5rem]`} onClick={onVehicleHandler}>1</div>
-                <div className={`${portSpace ? "bg-white text-black" :""} rounded-full w-10 h-10 border box-border font-[Bellefair] text-base leading-5 pt-[0.5rem] text-center  tracking-[1px] text-[#FFFFFF] lg:h-[5rem] lg:w-[5rem] lg:text-[2rem] lg:leading-9 lg:tracking-[2px] hover:cursor-pointer lg:pt-[1.5rem]`} onClick={onSpaceHandler}>2</div>
-                <div className={`${capsuleSpace ? "bg-white text-black" :""} rounded-full w-10 h-10 border box-border font-[Bellefair] text-base leading-5 text-center pt-[0.5rem] tracking-[1px] text-[#FFFFFF] lg:h-[5rem] lg:w-[5rem] lg:text-[2rem] lg:leading-9 lg:tracking-[2px] hover:cursor-pointer lg:pt-[1.5rem]`} onClick={onCapsuleHandler}>3</div>
+                <div className={`${state.vehicleSpace ? "bg-white text-black" :""} rounded-full w-10 h-10 border box-border font-[Bellefair]  pt-[0.5rem]  text-base leading-5 text-center  tracking-[1px] text-[#FFFFFF] lg:h-[5rem] lg:w-[5rem] lg:text-[2rem] lg:leading-9 lg:tracking-[2px] hover:cursor-pointer lg:pt-[1.5rem]`} onClick={() => dispatch({type:'vehicleSpace'})}>1</div>
+                <div className={`${state.portSpace ? "bg-white text-black" :""} rounded-full w-10 h-10 border box-border font-[Bellefair] text-base leading-5 pt-[0.5rem] text-center  tracking-[1px] text-[#FFFFFF] lg:h-[5rem] lg:w-[5rem] lg:text-[2rem] lg:leading-9 lg:tracking-[2px] hover:cursor-pointer lg:pt-[1.5rem]`} onClick={() => dispatch({type:'portSpace'})}>2</div>
+                <div className={`${state.capsuleSpace ? "bg-white text-black" :""} rounded-full w-10 h-10 border box-border font-[Bellefair] text-base leading-5 text-center pt-[0.5rem] tracking-[1px] text-[#FFFFFF] lg:h-[5rem] lg:w-[5rem] lg:text-[2rem] lg:leading-9 lg:tracking-[2px] hover:cursor-pointer lg:pt-[1.5rem]`} onClick={() => dispatch({type:'capsuleSpace'})}>3</div>
                 </section>
                 <section className=''>
-               {vehicleSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto  md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
+               {state.vehicleSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto  md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
                     <p className="font-[Barlow-Condensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9]  mt-4 md:text-base md:leading-5 md:tracking-[2.7px] lg:text-start">THE TERMINOLOGY...</p>
                     <p className="font-[Bellefair] text-2xl leading-7 text-center text-[#FFFFFF] mt-4 md:text-[2.5rem] md:leading-[2.875rem] lg:text-start lg:text-[3.5rem] lg:leading-[4rem]"> LAUNCH VEHICLE </p>
                     <p className="font-[Barlow] leading-6 text-base text-center text-[#D0D6F9] w-[20.4375rem] h-[10.9375rem] mt-4 px-4 md:text-base md:leading-7 md:w-[28.625rem] md:mx-auto md:h-[8.75rem] lg:text-xl lg:leading-8 lg:text-start lg:p-0">A launch vehicle or carrier rocket-propelled vehicle used to carry
@@ -115,7 +140,7 @@ export default function Technology () {
                 </section>}
 
 
-               {portSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
+               {state.portSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
                     <p className="font-[Barlow-Condensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9] mt-4 md:text-base md:leading-5 md:tracking-[2.7px] lg:text-start">THE TERMINOLOGY...</p>
                     <p className=" font-[Bellefair] text-2xl leading-7 text-center text-[#FFFFFF] mt-4 md:text-[2.5rem] md:leading-[2.875rem] lg:text-start lg:text-[3.5rem] lg:leading-[4rem]   "> SPACEPORT </p>
                     <p className="font-[Barlow] leading-6 text-base text-center text-[#D0D6F9] w-[20.4375rem] h-[10.9375rem] mt-4  px-4 md:text-base md:leading-7  md:w-[28.625rem] md:mx-auto md:h-[8.75rem] lg:text-xl lg:leading-8 lg:text-start lg:p-0"> A spaceport or cosmodrome is a site for launching [or receiving]
@@ -126,7 +151,7 @@ export default function Technology () {
                     </p>
                 </section>}
 
-                { capsuleSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto   md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
+                { state.capsuleSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto   md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
                     <p className=" font-[Barlow-Condensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9] mt-4 md:text-base md:leading-5 md:tracking-[2.7px]  lg:text-start">THE TERMINOLOGY...</p>
                     <p className=" font-[Bellefair] text-2xl leading-7 text-center text-[#FFFFFF] mt-4  md:text-[2.5rem] md:leading-[2.875rem] lg:text-start lg:text-[3.5rem] lg:leading-[4rem] "> SPACE CAPSULE </p>
                     <p className=" font-[Barlow] leading-6 text-base text-center text-[#D0D6F9] w-[20.4375rem] h-[10.9375rem] mt-4 px-4 md:text-base md:leading-7 md:mx-auto md:w-[28.625rem]  md:h-[8.75rem] lg:text-xl lg:leading-8 lg:text-start lg:p-0"> A space capsule is an often-crewed spacecraft that uses a blunt-body
