@@ -1,10 +1,10 @@
 import Header from '../pages/header'
 import Image from 'next/image'
 import {useReducer} from 'react'
-import ANOUSHEH from '../public/assets/crew/image-anousheh-ansari.png'
-import DOUGLAS from '../public/assets/crew/image-douglas-hurley.png'
-import MARK from '../public/assets/crew/image-mark-Shuttleworth.png'
-import VICTOR from '../public/assets/crew/image-victor-glover.png'
+import ANOUSHEH from '../public/image-anousheh-ansari.png'
+import DOUGLAS from '../public/image-douglas-hurley.png'
+import MARK from '../public/image-mark-Shuttleworth.png'
+import VICTOR from '../public/image-victor-glover.png'
 
 
 export default function Crew () {
@@ -68,9 +68,9 @@ const [state, dispatch] = useReducer(crewHandler, initialState)
 
 
     return (
-        <div className="bg-[url('/assets/crew/background-crew-mobile.jpg')] bg-cover w-full min-h-[60rem]  relative box-border text-[#FFFFFF]
-        md:bg-[url('/assets/crew/background-crew-tablet.jpg')]
-        lg:bg-[url('/assets/crew/background-crew-desktop.jpg')]
+        <div className="bg-[url('/background-crew-mobile.jpg')] bg-cover w-full min-h-[60rem]  relative box-border text-[#FFFFFF]
+        md:bg-[url('/background-crew-tablet.jpg')]
+        lg:bg-[url('/background-crew-desktop.jpg')]
         ">
             <Header />
             <div className='mt-10 w-[10.375rem] h-[1.1875rem] mx-auto

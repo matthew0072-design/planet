@@ -1,13 +1,13 @@
 import Header from '../pages/header'
 import Image from 'next/image'
 import {useReducer} from 'react'
-import LAUNCH from '../public/assets/technology/image-launch-vehicle-landscape.jpg'
-import SPACE from '../public/assets/technology/image-space-capsule-landscape.jpg'
-import SPACEPORT from '../public/assets/technology/image-spaceport-landscape.jpg'
+import LAUNCH from '../public/image-launch-vehicle-landscape.jpg'
+import SPACE from '../public/image-space-capsule-landscape.jpg'
+import SPACEPORT from '../public/image-spaceport-landscape.jpg'
 
-import LAUNCH_PORTRAIT from '../public/assets/technology/image-launch-vehicle-portrait.jpg'
-import SPACE_PORTRAIT from '../public/assets/technology/image-space-capsule-portrait.jpg'
-import SPACEPORT_PORTRAIT from '../public/assets/technology/image-spaceport-portrait.jpg'
+import LAUNCH_PORTRAIT from '../public/image-launch-vehicle-portrait.jpg'
+import SPACE_PORTRAIT from '../public/image-space-capsule-portrait.jpg'
+import SPACEPORT_PORTRAIT from '../public/image-spaceport-portrait.jpg'
 
 export default function Technology () {
 
@@ -63,9 +63,9 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
 
 
     return (
-            <div className="bg-[url('/assets/technology/background-technology-mobile.jpg')] bg-cover min-h-screen w-full relative box-border text-[#FFFFFF]
-            md:bg-[url('/assets/technology/background-technology-tablet.jpg')] md:h-full
-            lg:bg-[url('/assets/technology/background-technology-desktop.jpg')]
+            <div className="bg-[url('/background-technology-mobile.jpg')] bg-cover min-h-screen w-full relative box-border text-[#FFFFFF]
+            md:bg-[url('/background-technology-tablet.jpg')] md:h-full
+            lg:bg-[url('/background-technology-desktop.jpg')]
             ">
                 <Header />
             <section className="w-[11rem] h-5 mx-auto md:mx-0  text-[#FFFFFF]

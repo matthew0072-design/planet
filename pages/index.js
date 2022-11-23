@@ -5,8 +5,8 @@ import Header from '../pages/header'
 export default function Home() {
   return (
     <div className=" w-full bg-backgroundTablet bg-no-repeat bg-cover box-border relative  text-white min-h-screen
-    md:bg-[url('/assets/home/background-home-tablet.jpg')] 
-    lg:bg-[url('/assets/home/background-home-desktop.jpg')]
+    md:bg-[url('/background-home-tablet.jpg')] 
+    lg:bg-[url('/background-home-desktop.jpg')]
     ">
       <Head> 
         <title>Planet</title>
