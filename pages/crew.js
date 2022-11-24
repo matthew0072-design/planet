@@ -3,7 +3,7 @@ import Image from 'next/image'
 import {useReducer} from 'react'
 import ANOUSHEH from '../public/image-anousheh-ansari.png'
 import DOUGLAS from '../public/image-douglas-hurley.png'
-import MARK from '../public/image-mark-Shuttleworth.png'
+import MARK from '../public/image-mark-shuttleworth.png'
 import VICTOR from '../public/image-victor-glover.png'
 
 
