@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'background': "url('../public/background.jpg')",
-        'backgroundTablet': "url('../public/tablet.jpg')",
+        'backgroundTablet': "url('/tablet.jpg')",
         'destinationTablet': "url('../public/destTablet2.jpg')",
       },
 
