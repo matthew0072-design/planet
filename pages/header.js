@@ -44,15 +44,15 @@ const [isNavOpen, setIsNavOpen] = useState(false)
       </div>
       <ul className=" mt-8 p-6 w-auto h-[15rem]  flex flex-col justify-between   ">
         <li className={`
-        ${router.pathname === "/" ? "border-b-2": ""} w-[4.375rem] h-7 hover:opacity-75 `}><Link href="/"><a className="font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px] text-[#FFFFFF] "><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF] ">00</span>  HOME</a></Link></li>
+        ${router.pathname === "/" ? "border-b-2": ""} w-[4.375rem] h-7 hover:opacity-75 `}><Link href="/"><a className="font-body2 text-base leading-5 tracking-[2.7px] text-[#FFFFFF] "><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF] ">00</span>  HOME</a></Link></li>
         <li className={`
-        ${router.pathname === "/destination" ? "border-b-2": ""} w-[8.125rem] h-7 hover:opacity-75`}><Link href="/destination"><a className='font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px] text-[#FFFFFF] '><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF] ">01</span>  DESTINATION</a></Link></li>
+        ${router.pathname === "/destination" ? "border-b-2": ""} w-[8.125rem] h-7 hover:opacity-75`}><Link href="/destination"><a className='font-body2 text-base leading-5 tracking-[2.7px] text-[#FFFFFF] '><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF] ">01</span>  DESTINATION</a></Link></li>
         <li className={` 
          
-         ${router.pathname === "/crew" ? "border-b-2": ""} w-[4.4375rem] h-7 hover:opacity-75`}><Link href="/crew"><a className='font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px] text-[#FFFFFF] '><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF]  ">02</span >  CREW</a></Link></li>
+         ${router.pathname === "/crew" ? "border-b-2": ""} w-[4.4375rem] h-7 hover:opacity-75`}><Link href="/crew"><a className='font-body2 text-base leading-5 tracking-[2.7px] text-[#FFFFFF] '><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF]  ">02</span >  CREW</a></Link></li>
         <li className={`  
         
-         ${router.pathname === "/technology" ? "border-b-2": ""} w-[7.9375rem] h-7 hover:opacity-75`}><Link href="/technology"><a className='font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px] text-[#FFFFFF] '><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF] ">03</span>  TECHNOLOGY</a></Link></li>
+         ${router.pathname === "/technology" ? "border-b-2": ""} w-[7.9375rem] h-7 hover:opacity-75`}><Link href="/technology"><a className='font-body2 text-base leading-5 tracking-[2.7px] text-[#FFFFFF] '><span className="font-[Barlow-Condensed] font-bold leading-5 tracking-[2.7px] text-[#FFFFFF] ">03</span>  TECHNOLOGY</a></Link></li>
       </ul>
     </div>
   
@@ -81,15 +81,15 @@ const [isNavOpen, setIsNavOpen] = useState(false)
          
          ">
             <li className={`
-            ${router.pathname === "/" ? "border-b-4": ""}`}><Link href="/"><a className="md:py-5 md:block md:font-[Barlow-Condensed] md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9 "><span className='md:hidden lg:font-bold lg:leading-5 lg:inline  lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>00</span> HOME</a></Link></li>
+            ${router.pathname === "/" ? "border-b-4": ""}`}><Link href="/"><a className="md:py-5 md:block md:font-body2 md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9 "><span className='md:hidden lg:font-bold lg:leading-5 lg:inline  lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>00</span> HOME</a></Link></li>
             <li className={`
-            ${router.pathname === "/destination" ? "border-b-4": ""}`}><Link href="/destination"><a className="md:block md:py-5 md:font-[Barlow-Condensed] md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9"><span className='md:hidden lg:inline lg:font-bold lg:leading-5 lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>01</span> DESTINATION</a></Link></li>
+            ${router.pathname === "/destination" ? "border-b-4": ""}`}><Link href="/destination"><a className="md:block md:py-5 md:font-body2 md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9"><span className='md:hidden lg:inline lg:font-bold lg:leading-5 lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>01</span> DESTINATION</a></Link></li>
             <li className={` 
              
-             ${router.pathname === "/crew" ? "border-b-4": ""}`}><Link href="/crew"><a className="md:py-5 md:block md:font-[Barlow-Condensed] md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9"><span className='md:hidden lg:inline lg:font-bold lg:leading-5 lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>02</span>  CREW</a></Link></li>
+             ${router.pathname === "/crew" ? "border-b-4": ""}`}><Link href="/crew"><a className="md:py-5 md:block md:font-body2 md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9"><span className='md:hidden lg:inline lg:font-bold lg:leading-5 lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>02</span>  CREW</a></Link></li>
             <li className={`  
             
-             ${router.pathname === "/technology" ? "border-b-4": ""}`}><Link href="/technology"><a className="md:py-5 md:block md:font-[Barlow-Condensed] md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9"><span className='md:hidden lg:inline lg:font-bold lg:leading-5 lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>03</span> TECHNOLOGY</a></Link></li>
+             ${router.pathname === "/technology" ? "border-b-4": ""}`}><Link href="/technology"><a className="md:py-5 md:block md:font-body2 md:text-sm md:leading-4 md:tracking-[2.3625px] md:text:[#FFFFFF] lg:text-base lg:leading-5 lg:tracking-[2.7px] lg:py-9"><span className='md:hidden lg:inline lg:font-bold lg:leading-5 lg:text-[#FFFFFF] lg:font-[Barlow-Condensed] lg:tracking-[2.7px]  '>03</span> TECHNOLOGY</a></Link></li>
           </ul>
          
          </nav>
