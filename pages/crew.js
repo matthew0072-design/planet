@@ -77,9 +77,9 @@ const [state, dispatch] = useReducer(crewHandler, initialState)
             md:w-[12.75rem] md:h-6 md:mx-0 
             lg:w-[17.875rem] lg:h-[2.125rem] lg:ml-[10.40625rem]
             '>
-                <h3 className="text-base leading-5 tracking-[2.7px] font-[Barlow-Condensed] text-[#FFFFFF] 
-                md:ml-9 md:h-6 md:w-[17rem] md:mx-0  md:text-xl md:leading-7 md:tracking-[3.375px] lg:text-3xl lg:leading-9 lg:tracking-[4.725px]
-                "><span className="font-bold opacity-25 mix-blend-normal ">02</span> MEET THE CREW</h3>
+                <h3 className="text-base leading-5 tracking-[2.7px] font-[Barlow-Condensed] text-[#FFFFFF] w-auto
+                md:ml-9 md:h-6 md:w-[17rem] md:mx-0  md:text-xl md:leading-7 md:tracking-[3.375px] lg:text-3xl lg:leading-9 lg:tracking-[4.725px] 
+                "><span className="font-bold opacity-25  ">02</span> MEET THE CREW</h3>
             </div>
             <main className=" md:flex md:flex-col 
             lg:grid lg:grid-cols-2 lg:grid-rows-2  lg:h-[44.5rem] lg:justify-items-start lg:ml-[10.40625rem]

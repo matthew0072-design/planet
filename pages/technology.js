@@ -71,12 +71,11 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
             <section className="w-[11rem] h-5 mx-auto md:mx-0  text-[#FFFFFF]
             lg:w-[25rem]  lg:ml-[10.40625rem]
             ">
-                <p className=" font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px]  
+                <p className=" font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px]  w-auto
                 md:ml-9 md:h-6 md:w-[13.5625rem] md:text-xl md:leading-7 md:tracking-[3.375px] 
                 lg:text-3xl lg:leading-9 lg:tracking-[4.725px] lg:w-auto 
-                "><span className="font-[Barlow-Condensed] font-bold opacity-25 text-base mix-blend-normal 
-                md:text-xl leading-6 tracking-[3.375px]
-                lg:text-3xl lg:leading-9 lg:tracking-[4.725px]   ">03</span> SPACE LAUNCH 101  </p>
+                "><span className=" font-bold opacity-25  
+                   ">03</span> SPACE LAUNCH 101  </p>
             </section>
             <main className="lg:flex lg:items-center lg:h-screen lg:ml-[10.40625rem]">
             <figure className='mt-8 h-[10.625rem] w-screen   box-border aspect-video
