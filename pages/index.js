@@ -4,7 +4,7 @@ import Header from '../pages/header'
 
 export default function Home() {
   return (
-    <div className=" w-full bg-backgroundTablet bg-no-repeat bg-cover box-border relative  text-white min-h-screen
+    <div className=" w-full bg-[url('/background-home-mobile.jpg')] bg-no-repeat bg-cover box-border relative  text-white min-h-screen
     md:bg-[url('/background-home-tablet.jpg')] 
     lg:bg-[url('/background-home-desktop.jpg')]
     ">
@@ -24,7 +24,7 @@ export default function Home() {
         md:w-[28.125rem]  md:h-[20.875rem]
          lg:ml-[10.3125rem]
         ">
-          <p className="font-normal text-base leading-5 tracking-wide font-[Barlow-condensed] text-center text-[#D0D6F9]
+          <p className="font-normal text-base leading-5 tracking-wide font-[BarlowCondensed] text-center text-[#D0D6F9]
           md:text-xl md:leading-6 md:tracking-[3.375px] lg:text-3xl lg:leading-9 lg:tracking-[4.725px]
           ">SO, YOU WANT TO TRAVEL TO <span className="  mx-auto  w-[20.4375rem] h-[6.25rem]  block font-[Bellefair] font-normal text-[5rem] leading-[6.25rem] text-center text-[#FFFFFF]
          md:text-[9.375rem] md:leading-[9.375rem] md:mx-0 md:mt-4 lg:leading-[10.75rem] 

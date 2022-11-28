@@ -71,7 +71,7 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
             <section className="w-[11rem] h-5 mx-auto md:mx-0  text-[#FFFFFF]
             lg:w-[25rem]  lg:ml-[10.40625rem]
             ">
-                <p className=" font-[Barlow-Condensed] text-base leading-5 tracking-[2.7px]  w-auto
+                <p className=" font-[BarlowCondensed] text-base leading-5 tracking-[2.7px]  w-auto
                 md:ml-9 md:h-6 md:w-[13.5625rem] md:text-xl md:leading-7 md:tracking-[3.375px] 
                 lg:text-3xl lg:leading-9 lg:tracking-[4.725px] lg:w-auto 
                 "><span className=" font-bold opacity-25  
@@ -129,7 +129,7 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
                 </section>
                 <section className=''>
                {state.vehicleSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto  md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
-                    <p className="font-[Barlow-Condensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9]  mt-4 md:text-base md:leading-5 md:tracking-[2.7px] lg:text-start">THE TERMINOLOGY...</p>
+                    <p className="font-[BarlowCondensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9]  mt-4 md:text-base md:leading-5 md:tracking-[2.7px] lg:text-start">THE TERMINOLOGY...</p>
                     <p className="font-[Bellefair] text-2xl leading-7 text-center text-[#FFFFFF] mt-4 md:text-[2.5rem] md:leading-[2.875rem] lg:text-start lg:text-[3.5rem] lg:leading-[4rem]"> LAUNCH VEHICLE </p>
                     <p className="font-[Barlow] leading-6 text-base text-center text-[#D0D6F9] w-[20.4375rem] h-[10.9375rem] mt-4 px-4 md:text-base md:leading-7 md:w-[28.625rem] md:mx-auto md:h-[8.75rem] lg:text-xl lg:leading-8 lg:text-start lg:p-0">A launch vehicle or carrier rocket-propelled vehicle used to carry
                         a payload from Earth's surface to space, usually to Earth orbit or beyond.
@@ -140,7 +140,7 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
 
 
                {state.portSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
-                    <p className="font-[Barlow-Condensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9] mt-4 md:text-base md:leading-5 md:tracking-[2.7px] lg:text-start">THE TERMINOLOGY...</p>
+                    <p className="font-[BarlowCondensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9] mt-4 md:text-base md:leading-5 md:tracking-[2.7px] lg:text-start">THE TERMINOLOGY...</p>
                     <p className=" font-[Bellefair] text-2xl leading-7 text-center text-[#FFFFFF] mt-4 md:text-[2.5rem] md:leading-[2.875rem] lg:text-start lg:text-[3.5rem] lg:leading-[4rem]   "> SPACEPORT </p>
                     <p className="font-[Barlow] leading-6 text-base text-center text-[#D0D6F9] w-[20.4375rem] h-[10.9375rem] mt-4  px-4 md:text-base md:leading-7  md:w-[28.625rem] md:mx-auto md:h-[8.75rem] lg:text-xl lg:leading-8 lg:text-start lg:p-0"> A spaceport or cosmodrome is a site for launching [or receiving]
                         spacecraft, by analogy to the seaport for ships or airport for aircraft.
@@ -151,7 +151,7 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
                 </section>}
 
                 { state.capsuleSpace && <section className="w-[20.375rem] h-[13.75rem] text-[#FFFFFF]  mx-auto   md:w-[28.625rem] md:h-[14.8125rem] lg:h-[18.9375rem] lg:w-[29.375rem]  ">
-                    <p className=" font-[Barlow-Condensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9] mt-4 md:text-base md:leading-5 md:tracking-[2.7px]  lg:text-start">THE TERMINOLOGY...</p>
+                    <p className=" font-[BarlowCondensed] text-sm leading-4 text-center tracking-[2.3625px] text-[#D0D6F9] mt-4 md:text-base md:leading-5 md:tracking-[2.7px]  lg:text-start">THE TERMINOLOGY...</p>
                     <p className=" font-[Bellefair] text-2xl leading-7 text-center text-[#FFFFFF] mt-4  md:text-[2.5rem] md:leading-[2.875rem] lg:text-start lg:text-[3.5rem] lg:leading-[4rem] "> SPACE CAPSULE </p>
                     <p className=" font-[Barlow] leading-6 text-base text-center text-[#D0D6F9] w-[20.4375rem] h-[10.9375rem] mt-4 px-4 md:text-base md:leading-7 md:mx-auto md:w-[28.625rem]  md:h-[8.75rem] lg:text-xl lg:leading-8 lg:text-start lg:p-0"> A space capsule is an often-crewed spacecraft that uses a blunt-body
                         reentry capsule to reenter the Earth's atmosphere without wings. Our 

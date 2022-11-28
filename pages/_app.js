@@ -3,16 +3,14 @@ import { useState, useEffect } from 'react';
 import { Vortex } from  'react-loader-spinner';
 
 import '../styles/globals.css'
-// import Spinner from '../Spinner/Spinner'
+
 function MyApp({ Component, pageProps }) {
 
 const router = useRouter();
 const [loading, setLoading] = useState(false)
 
 useEffect(() => {
-  // const handleStart = (url) => {
-  //   url !== router.pathname ? setLoading(true) : setLoading(false)
-  // }
+
 
   const handleStart = () => {setLoading(true)}
   const handleComplete = () => setLoading(false);
@@ -33,12 +31,18 @@ useEffect(() => {
   { !loading ? (<Component {...pageProps} />) : 
    ( <Vortex
     visible={true}
-    height="80"
-    width="100"
+    height="50"
+    width="50"
     ariaLabel="vortex-loading"
-    wrapperStyle={{}}
+    wrapperStyle={{display:'flex',
+      width: '100vw', 
+      height:'100vh', 
+      margin:"auto",
+      background: 'black',
+      
+      border:'2px solid red'}}
     wrapperClass="vortex-wrapper"
-    colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
+    colors={['white', 'white', 'blue', 'yellow', 'white', 'white']}
   />      
      )
     

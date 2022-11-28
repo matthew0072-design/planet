@@ -16,15 +16,17 @@
 }
 
 @font-face {
-    font-family: Barlow-Condensed;
-    src: local('') url(/fonts/BarlowCondensed-Regular.woff) format('woff');
+    font-family: BarlowCondensed;
+    src: local(''), url(/fonts/BarlowCondensed-Regular.woff) format('woff');
+    src: local(''), url(/fonts/BarlowCondensed.woff2) format('woff2'),
+
 }
 
 
 
 @font-face {
     font-family: Bellefair;
-    src: local('') url(/fonts/Bellefair-Regular.woff) format('woff');
+    src: local(''), url(/fonts/Bellefair-Regular.woff) format('woff');
 
 }
 

@@ -15,7 +15,7 @@ module.exports = {
       fontFamily: {
         body: ["Bellefair"],
         body1: ["Barlow"],
-        body2: ["Barlow-Condensed"]
+        body2: ["BarlowCondensed"]
       },
         
   

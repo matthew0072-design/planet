@@ -77,7 +77,7 @@ const [state, dispatch] = useReducer(crewHandler, initialState)
             md:w-[12.75rem] md:h-6 md:mx-0 
             lg:w-[17.875rem] lg:h-[2.125rem] lg:ml-[10.40625rem]
             '>
-                <h3 className="text-base leading-5 tracking-[2.7px] font-[Barlow-Condensed] text-[#FFFFFF] w-auto
+                <h3 className="text-base leading-5 tracking-[2.7px] font-[BarlowCondensed] text-[#FFFFFF] w-auto
                 md:ml-9 md:h-6 md:w-[17rem] md:mx-0  md:text-xl md:leading-7 md:tracking-[3.375px] lg:text-3xl lg:leading-9 lg:tracking-[4.725px] 
                 "><span className="font-bold opacity-25  ">02</span> MEET THE CREW</h3>
             </div>
@@ -95,10 +95,10 @@ const [state, dispatch] = useReducer(crewHandler, initialState)
                                 return (<Image src={DOUGLAS} height={600} objectFit="contain" layout='responsive'  alt="planet"/>)
                             }
                             else if (state.mission) {
-                               return  (<Image src={MARK}  height={600} objectFit="contain" layout='responsive'  alt="planet"/>)
+                               return  (<Image src={MARK}  height={550} objectFit="contain" layout='responsive'  alt="planet"/>)
                             }
                             else if (state.pilot){
-                               return  (<Image src={VICTOR}  height={700} objectFit="contain" layout='responsive' alt="planet"/>)
+                               return  (<Image src={VICTOR}  height={650} objectFit="contain" layout='responsive' alt="planet"/>)
                             }else {
                                return (<Image src={ANOUSHEH} height={700}  objectFit="contain" layout='responsive'  alt="planet"/>)
                             }
