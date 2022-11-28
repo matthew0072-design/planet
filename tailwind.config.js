@@ -9,12 +9,8 @@ module.exports = {
       ...defaultTheme.screens,
     },
 
-    extend: {
-      backgroundImage: {
-        'background': "url('../public/background.jpg')",
-        'backgroundTablet': "url('/tablet.jpg')",
-        'destinationTablet': "url('../public/destTablet2.jpg')",
-      },
+    
+      
 
       fontFamily: {
         body: ["Bellefair"],
@@ -22,7 +18,7 @@ module.exports = {
         body2: ["Barlow-Condensed"]
       },
         
-    },
+  
 
    
     Text: {
