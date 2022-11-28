@@ -12,19 +12,19 @@
 
 @font-face {
     font-family: Barlow;
-    src: url(./fonts/Barlow-Regular-webfont.woff) format('woff');
+    src: local(''), url(/fonts/Barlow-Regular-webfont.woff) format('woff');
 }
 
 @font-face {
     font-family: Barlow-Condensed;
-    src: url(./fonts/BarlowCondensed-Regular.woff) format('woff');
+    src: local('') url(/fonts/BarlowCondensed-Regular.woff) format('woff');
 }
 
 
 
 @font-face {
     font-family: Bellefair;
-    src: url(./fonts/Bellefair-Regular.woff) format('woff');
+    src: local('') url(/fonts/Bellefair-Regular.woff) format('woff');
 
 }
 
