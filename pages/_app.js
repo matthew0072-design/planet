@@ -34,13 +34,13 @@ useEffect(() => {
     height="50"
     width="50"
     ariaLabel="vortex-loading"
-    wrapperStyle={{display:'flex',
+    wrapperStyle={{
+      display:'flex',
       width: '100vw', 
       height:'100vh', 
       margin:"auto",
       background: 'black',
-      
-      border:'2px solid red'}}
+      }}
     wrapperClass="vortex-wrapper"
     colors={['white', 'white', 'blue', 'yellow', 'white', 'white']}
   />      
