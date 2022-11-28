@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import Spinner from '../Spinner/Spinner';
 
 import '../styles/globals.css'
@@ -12,8 +12,10 @@ const [loading, setLoading] = useState(false)
 useEffect(() => {
 
 
-  const handleStart = () => {setLoading(true)}
-  const handleComplete = () => setLoading(false);
+  const handleStart = (url) => {
+    url !== router.pathname ?  setLoading(true) : setLoading(false)
+  }
+  const handleComplete = (url) => setLoading(false);
 
   router.events.on("routeChangeStart", handleStart);
   router.events.on("routeChangeComplete", handleComplete);
@@ -28,7 +30,10 @@ useEffect(() => {
 
   return (
     <>
-  { loading ? ( <Spinner />) : (<Component {...pageProps} />) }
+  { loading ? ( <Spinner />) : (
+  <Fragment>
+    <Component {...pageProps} />
+    </Fragment>) }
     </>
     
   ) 
