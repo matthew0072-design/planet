@@ -92,15 +92,15 @@ const [state, dispatch] = useReducer(crewHandler, initialState)
                     {
                         (() => {
                             if(state.commander){
-                                return (<Image src={DOUGLAS} height={600} objectFit="contain" layout='responsive'  alt="planet"/>)
+                                return (<Image src={DOUGLAS} height={600} objectFit="contain" layout='responsive'  alt="planet" priority/>)
                             }
                             else if (state.mission) {
-                               return  (<Image src={MARK}  height={550} objectFit="contain" layout='responsive'  alt="planet"/>)
+                               return  (<Image src={MARK}  height={550} objectFit="contain" layout='responsive'  alt="planet" priority/>)
                             }
                             else if (state.pilot){
-                               return  (<Image src={VICTOR}  height={650} objectFit="contain" layout='responsive' alt="planet"/>)
+                               return  (<Image src={VICTOR}  height={650} objectFit="contain" layout='responsive' alt="planet" priority/>)
                             }else {
-                               return (<Image src={ANOUSHEH} height={700}  objectFit="contain" layout='responsive'  alt="planet"/>)
+                               return (<Image src={ANOUSHEH} height={700}  objectFit="contain" layout='responsive'  alt="planet" priority/>)
                             }
 
                         })()

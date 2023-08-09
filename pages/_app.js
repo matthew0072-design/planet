@@ -34,6 +34,8 @@ useEffect(() => {
   <Fragment>
     <Component {...pageProps} />
     </Fragment>) }
+
+    
     </>
     
   ) 

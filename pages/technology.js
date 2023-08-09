@@ -106,13 +106,13 @@ const [state, dispatch] = useReducer(technologyHandler, initialState)
                     {
                         (() => {
                             if(state.vehicleSpace){
-                                return (<Image src={LAUNCH_PORTRAIT} objectFit="contain" height={300}  layout="responsive" alt="planet"/>)
+                                return (<Image src={LAUNCH_PORTRAIT} objectFit="contain" height={300}  layout="responsive" alt="planet" priority/>)
                             }
                             else if (state.portSpace) {
-                               return  <Image src={SPACE_PORTRAIT}  height={300}  objectFit="contain" layout='responsive'  alt="planet"/>
+                               return  <Image src={SPACE_PORTRAIT}  height={300}  objectFit="contain" layout='responsive'  alt="planet" priority/>
                             }
                             else {
-                               return  <Image src={SPACEPORT_PORTRAIT}  height={300}  objectFit="contain" layout='responsive' alt="planet"/>
+                               return  <Image src={SPACEPORT_PORTRAIT}  height={300}  objectFit="contain" layout='responsive' alt="planet" priority/>
                             }
                                
 

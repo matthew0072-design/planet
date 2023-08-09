@@ -1,13 +1,13 @@
 import React from 'react'
 import { Vortex } from  'react-loader-spinner';
 
-const Spinner = () => {
+const Spinner = (props) => {
   return (
-    <div>
+    <div >
          <Vortex
     visible={true}
-    height="50"
-    width="50"
+    height="30"
+    width="30"
     ariaLabel="vortex-loading"
     wrapperStyle={{
       display:'flex',

@@ -90,15 +90,15 @@ const [state, dispatch] = useReducer(destinationHandler, initialState)
                     {
                         (() => {
                             if(state.moon){
-                                return (<Image src={MOON} width={300} height={400}  alt="planet"/>)
+                                return (<Image src={MOON} width={300} height={400}  alt="planet" priority/>)
                             }
                             else if (state.mars) {
-                               return  <Image src={MARS} width={350} height={400}  alt="planet"/>
+                               return  <Image src={MARS} width={350} height={400}  alt="planet" priority/>
                             }
                             else if (state.europa){
-                               return  <Image src={EUROPA} width={350} height={400}  alt="planet"/>
+                               return  <Image src={EUROPA} width={350} height={400}  alt="planet" priority/>
                             }else {
-                               return <Image src={TITAN} width={350} height={400}  alt="planet"/>
+                               return <Image src={TITAN} width={350} height={400}  alt="planet" priority/>
                             }
 
                         })()

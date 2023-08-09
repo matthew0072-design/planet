@@ -22,7 +22,7 @@ const [isNavOpen, setIsNavOpen] = useState(false)
           '>
             
           <div className="w-10 h-10 rounded-full bg-white ml-3">
-          <Image src={path}  alt="logo"/>
+          <Image src={path}  alt="logo" priority/>
           
         </div>
         <span className='lg:w-[29.5625rem] lg:h-[1px] lg:border lg:opacity-25 '></span>
